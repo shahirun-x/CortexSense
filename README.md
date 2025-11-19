@@ -1,70 +1,93 @@
-# Cortex Sense
+#  Cortex Sense: The Neuro-Adaptive Learning Assistant
+> **"The first EdTech platform that knows when you're tired and wakes you up with AI."**
 
-**A neuroadaptive learning prototype that adapts web content to your cognitive state in real-time.**
+![Cortex Sense Banner](https://placehold.co/1200x400/ffb7b2/6b4c5e?text=Cortex+Sense+Dashboard)
+*(Add your actual screenshot here after pushing!)*
 
-Cortex Sense is an open-source project that explores a new paradigm in user-centric web experiences. It demonstrates a complete feedback loop where a user's cognitive state, derived from a simulated brain-computer interface (BCI), directly influences the content they see. This project serves as a proof-of-concept for creating truly personalized and adaptive applications.
+##  What is Cortex Sense?
+Online learning is broken. It treats everyone the same, whether they are hyper-focused or falling asleep.
 
-### Key Features
+**Cortex Sense** is a **Neuro-Adaptive Web Application** that uses a simulated Brain-Computer Interface (BCI) to monitor cognitive states in real-time. It uses **Generative AI** and **Audio Bio-Feedback** to actively intervene when a student loses focus.
 
-* **Live EEG Simulation:** An interactive, in-browser simulator generates distinct brainwave patterns for different cognitive states ("Focused" and "Drowsy"), allowing for full functionality without physical hardware.
-* **AI-Powered State Classification:** A lightweight, client-side neural network built with **Brain.js** is trained in real-time to classify the live EEG data stream.
-* **Adaptive Text Intervention:** The application's core feature. When the AI detects a "Drowsy" state, the learning content is automatically simplified to help the user maintain engagement and focus.
-* **Privacy-First Architecture:** All data simulation, AI model training, and real-time classification happen exclusively on the client-side. No personal or neural data is ever transmitted or stored externally.
+It’s not just a website; it’s a study partner that adapts to *your* brain.
 
-### ⚙️ Technology Stack
+---
 
-* **AI / Machine Learning:** [Brain.js](https://github.com/BrainJS/brain.js)
-* **Data Visualization:** [Chart.js](https://www.chartjs.org/)
-* **Frontend:** HTML, CSS, JavaScript (ES6+)
-* **Foundation:** Built on the [PWA Starter](https://github.com/pwa-builder/pwa-starter) for a modern, reliable web application base.
+##  Key Features ( The "Magic" )
 
-### 🚀 Getting Started
+### 1.  Generative AI Intervention (Google Gemini 2.5)
+When the system detects the **"Drowsy"** state, it doesn't just alert you. It captures the complex academic text on the screen and sends it to **Google Gemini 2.5 Flash**. The AI instantly **rewrites the lesson** into a funny, short, one-sentence summary to re-engage the user.
 
-To get a local copy up and running, follow these simple steps.
+### 2.  Neuro-Audio Bio-Feedback
+We utilize the **Web Audio API** to influence brainwaves directly:
+* **Focused State:** Plays a subtle **40Hz Gamma Binaural Beat** to biologically sustain concentration.
+* **Drowsy State:** Triggers a sharp auditory alert to snap the user back to attention.
 
-#### Prerequisites
+### 3.  Client-Side Neural Network
+Using **Brain.js**, we run a Long Short-Term Memory (LSTM) Neural Network entirely in the browser. It analyzes the simulated EEG data stream (Alpha vs. Theta waves) to classify cognitive states with zero latency.
 
-You need to have [Node.js](https://nodejs.org/) installed on your machine.
+### 4.  Aesthetic Interface
+Who says AI has to be boring? We implemented a custom **Glassmorphism Kawaii UI** with responsive charts, glowing visuals, and a user-friendly experience that reduces anxiety during learning.
 
-#### Installation & Setup
+---
 
-1.  **Clone the repository:**
-    ```sh
+##  The Tech Stack
+
+* **Core Framework:** Vite (Vanilla JS)
+* **AI & ML:** Brain.js (Neural Network), Google Generative AI SDK (Gemini 2.5)
+* **Visualization:** Chart.js (Real-time EEG Telemetry)
+* **Audio:** Native Web Audio API (Binaural Oscillators)
+* **Styling:** Custom CSS3 (Glassmorphism & Animations)
+
+---
+
+##  How to Run This Project
+
+Since this uses modern AI features, you need to set up the environment variables.
+
+### Prerequisites
+* Node.js installed
+* A free Google Gemini API Key
+
+### Installation
+
+1.  **Clone the repo**
+    ```bash
     git clone [https://github.com/shahirun-x/CortexSense.git](https://github.com/shahirun-x/CortexSense.git)
-    ```
-2.  **Navigate to the project directory:**
-    ```sh
     cd CortexSense
     ```
-3.  **Install NPM packages:**
-    ```sh
+
+2.  **Install Dependencies**
+    ```bash
     npm install
     ```
-4.  **Run the development server:**
-    ```sh
+
+3.  **Setup Security Keys**
+    Create a file named `.env` in the root directory and add your Gemini Key:
+    ```env
+    VITE_GEMINI_API_KEY=your_actual_google_api_key_here
+    ```
+
+4.  **Run the App**
+    ```bash
     npm start
     ```
-    Your browser should automatically open to `http://localhost:3000`.
+    Open your browser to the local host link (usually `http://localhost:5173`).
 
-### Usage Workflow
+---
 
-To see the neuroadaptive intervention in action, follow these steps in the application:
+##  How to Demo (The Hackathon Flow)
 
-1.  **Train the AI:** Click the **`Train AI`** button. Wait a few seconds for the "Cognitive State" status to change to "AI Ready". The training progress will be logged in your browser's developer console.
-2.  **Start the Simulator:** Click **`Start Simulator`** to begin the live EEG data stream.
-3.  **Generate Focused Data:** Click **`Generate Focused Data`**. The AI will predict your state as "Focused", and the original, detailed text will be displayed.
-4.  **Generate Drowsy Data:** Click **`Generate Drowsy Data`**. The AI will predict your state as "Drowsy", and the paragraph will instantly change to a simpler, summarized version.
+1.  **Initialize AI Core:** Click the purple button to train the Neural Network in the browser.
+2.  **Connect BCI Stream:** Starts the live EEG simulation.
+3.  **Inject Focus Pattern:** Observe the chart moving fast (Alpha waves). The text remains detailed. Listen for the 40Hz hum.
+4.  **Inject Fatigue Pattern:** Observe the chart slowing down (Theta waves).
+    * **Watch the Magic:** The text effectively *morphs* into a funny summary (thanks to Gemini).
+    * **Hear the Alert:** The focus music stops and a wake-up sound plays.
 
-### Contributing
+---
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+##  Privacy & Architecture
+Unlike other BCI apps, Cortex Sense processes the neural data **locally** using `Brain.js`. Your brain data never leaves the browser. Only the text content is sent to Google Gemini for simplification.
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
-### License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+---
