@@ -1,8 +1,7 @@
 #  Cortex Sense: The Neuro-Adaptive Learning Assistant
 > **"The first EdTech platform that knows when you're tired and wakes you up with AI."**
 
-![Cortex Sense Banner](https://placehold.co/1200x400/ffb7b2/6b4c5e?text=Cortex+Sense+Dashboard)
-*(Add your actual screenshot here after pushing!)*
+![Cortex Sense Banner](public/screenshot.png)
 
 ##  What is Cortex Sense?
 Online learning is broken. It treats everyone the same, whether they are hyper-focused or falling asleep.
