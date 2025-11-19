@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cortex Sense // Neuro-Adaptive Interface</title>
+    <script src="https://unpkg.com/brain.js"></script>
+  </head>
+  <body>
+    <div class="dashboard">
+
+      <aside class="panel">
+        <header>
+          <h1>CORTEX<br>SENSE</h1>
+          <p style="font-size: 0.7rem; opacity: 0.6; letter-spacing: 1px;">NEURO-ADAPTIVE SYSTEM</p>
+        </header>
+
+        <div class="status-display">
+          <h3>SYSTEM STATUS</h3>
+          <div class="status-item">
+            <span class="label">BCI CONNECTION</span>
+            <span class="value" id="simulator-status" style="color: #ff4444;">OFFLINE</span>
+          </div>
+          <div class="status-item">
+            <span class="label">COGNITIVE STATE</span>
+            <span class="value" id="cognitive-state" style="color: var(--neon-blue);">--</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <h3>CONTROLS</h3>
+          <button id="train-ai-btn">Initialize AI Core</button>
+          <button id="start-sim-btn">Connect BCI Stream</button>
+          <button id="stop-sim-btn">Terminate Connection</button>
+          <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+             <p class="label">SIMULATION TRIGGERS</p>
+             <button id="generate-focused-btn">Inject: Focus Pattern</button>
+             <button id="generate-drowsy-btn">Inject: Fatigue Pattern</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+
+        <article id="learning-content" style="height: 40%; overflow-y: auto;">
+          <h3>ACTIVE LEARNING MODULE</h3>
+          <h2>Chapter 1: Quantum Computing Fundamentals</h2>
+          <p id="content-paragraph">
+            Quantum computing is a multidisciplinary field comprising aspects of computer science, physics, and mathematics that utilizes quantum mechanics to solve complex problems faster than classical computers. The field of quantum computing includes hardware research and application development. Quantum computers leverage quantum mechanical phenomena, such as superposition and entanglement, to create states that can be used to perform computations.
+          </p>
+        </article>
+
+        <div class="chart-container" style="height: 55%; min-height: 300px;">
+           <h3>REAL-TIME EEG TELEMETRY</h3>
+           <canvas id="eeg-chart"></canvas>
+        </div>
+
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -15,8 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@shoelace-style/shoelace": "^2.18.0",
     "@thepassle/app-tools": "^0.9.12",
+    "chart.js": "^4.5.1",
     "lit": "^3.2.1",
     "urlpattern-polyfill": "^10.0.0",
     "workbox-build": "^7.3.0",

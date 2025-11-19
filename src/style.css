@@ -1,0 +1,137 @@
+/* src/style.css - HELLO KITTY / KAWAII THEME */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap');
+
+:root {
+  --hot-pink: #ff69b4;
+  --pastel-pink: #ffb7b2;
+  --soft-white: #fff0f5; /* Lavender Blush */
+  --text-color: #6b4c5e; /* Dark warm grey/purple */
+  --panel-bg: rgba(255, 255, 255, 0.85);
+  --shadow-color: rgba(255, 105, 180, 0.3);
+}
+
+body {
+  background-color: #ffe6ea;
+  background-image:
+      radial-gradient(#ff9eb5 15%, transparent 16%),
+      radial-gradient(#ff9eb5 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  color: var(--text-color);
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh; /* Allow it to grow */
+  /* overflow: hidden;  <-- REMOVED THIS TO ENABLE SCROLLING */
+}
+
+/* Layout */
+.dashboard {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 25px;
+  min-height: 95vh; /* changed from height to min-height */
+  height: auto;     /* Allow it to stretch */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 50px; /* Extra space at bottom */
+}
+
+/* The Cute Panels */
+.panel {
+  background: var(--panel-bg);
+  border: 4px solid white;
+  border-radius: 30px; /* Super rounded */
+  padding: 25px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  backdrop-filter: blur(5px);
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Fredoka One', cursive; /* Bubbly Font */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+
+h1 {
+  color: var(--hot-pink);
+  font-size: 2.2rem;
+  text-shadow: 3px 3px 0px white;
+  line-height: 1.2;
+}
+
+h3 {
+  color: var(--text-color);
+  background: #ffcce0;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Content Text */
+#content-paragraph {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-weight: 600;
+  color: var(--text-color);
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px dashed var(--pastel-pink);
+}
+
+/* Cute Buttons */
+button {
+  background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%);
+  border: none;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  padding: 15px;
+  margin-bottom: 12px;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+  border-radius: 50px; /* Pill shape */
+  box-shadow: 0 5px 15px rgba(255, 100, 150, 0.3);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(255, 100, 150, 0.5);
+}
+
+/* Specific Button Colors */
+#train-ai-btn { background: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%); }
+#stop-sim-btn { background: linear-gradient(45deg, #ff9a9e 0%, #ff6a88 100%); }
+
+/* Status items */
+.status-item {
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 2px solid #fff0f5;
+}
+.label { font-size: 0.8rem; font-weight: bold; color: #aaa; display: block; margin-bottom: 5px;}
+.value { font-size: 1.4rem; font-family: 'Fredoka One'; color: var(--hot-pink);}
+
+/* Chart Area */
+.chart-container {
+  position: relative;
+  height: 400px; /* Fixed height so it never gets cut off */
+  min-height: 400px;
+  width: 100%;
+  background: white;
+  border-radius: 25px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 2px solid #ffe6ea;
+  margin-top: 20px;
+}
